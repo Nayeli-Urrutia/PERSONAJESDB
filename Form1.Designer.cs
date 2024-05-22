@@ -47,6 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxHistoria = new System.Windows.Forms.TextBox();
             this.buttonfecha_creacion = new System.Windows.Forms.Button();
+            this.buttonreciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNivelPoder)).BeginInit();
             this.SuspendLayout();
@@ -222,11 +223,22 @@
             this.buttonfecha_creacion.UseVisualStyleBackColor = true;
             this.buttonfecha_creacion.Click += new System.EventHandler(this.buttonfecha_creacion_Click);
             // 
+            // buttonreciente
+            // 
+            this.buttonreciente.Location = new System.Drawing.Point(814, 178);
+            this.buttonreciente.Name = "buttonreciente";
+            this.buttonreciente.Size = new System.Drawing.Size(173, 56);
+            this.buttonreciente.TabIndex = 19;
+            this.buttonreciente.Text = "Agregados Recientemente";
+            this.buttonreciente.UseVisualStyleBackColor = true;
+            this.buttonreciente.Click += new System.EventHandler(this.buttonreciente_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 624);
+            this.Controls.Add(this.buttonreciente);
             this.Controls.Add(this.buttonfecha_creacion);
             this.Controls.Add(this.textBoxHistoria);
             this.Controls.Add(this.label5);
@@ -277,6 +289,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxHistoria;
         private System.Windows.Forms.Button buttonfecha_creacion;
+        private System.Windows.Forms.Button buttonreciente;
     }
 }
 

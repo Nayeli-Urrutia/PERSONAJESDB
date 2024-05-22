@@ -31,6 +31,8 @@ namespace Wfdb
 
 
         private PersonajeDB personaje;
+  
+
 
         public Form1()
         {
@@ -140,11 +142,6 @@ namespace Wfdb
         private PersonajeDB ordenar;
 
         
-          
-
-
-
-        
         private void buscarPorFecha()
         {
             // Obtener todos los personajes de la base de datos
@@ -168,6 +165,27 @@ namespace Wfdb
         private void buttonfecha_creacion_Click(object sender, EventArgs e)
         {
             buscarPorFecha();
+        }
+
+        //Fecha reinte
+
+        
+
+        
+            private void buscarPorFechareciente()
+            {
+                DateTime fechaFin = DateTime.Now;
+                DateTime fechaInicio = fechaFin.AddDays(-5); // Cambia el número de días según tu definición de "recientemente"
+
+                DataTable personajesRecientesOrdenados = personaje.ObtenerPersonajesRecientes(fechaInicio, fechaFin);
+
+                dataGridViewPersonajes.DataSource = personajesRecientesOrdenados;
+            }
+        
+
+        private void buttonreciente_Click(object sender, EventArgs e)
+        {
+            buscarPorFechareciente();
         }
     }
 }

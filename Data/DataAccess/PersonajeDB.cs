@@ -192,8 +192,31 @@ namespace Wfdb.Data.DataAccess
 
     return ordenar;
 }
+        //Ordenar Reciente 
+        public DataTable ObtenerPersonajesRecientes(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable personajesRecientes = new DataTable();
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = "SELECT * FROM db_universidad.personajes_dragon_ball WHERE fecha_creacion BETWEEN @fechaInicio AND @fechaFin ORDER BY fecha_creacion ASC";
+                using (MySqlCommand command = new MySqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                    command.Parameters.AddWithValue("@fechaFin", fechaFin);
 
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(personajesRecientes);
+                    }
+                }
+            }
+
+            return personajesRecientes;
         }
     }
+
+}
+    
 
